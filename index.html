@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gusti Aditya Muzaky – Portfolio</title>
+
+  <!-- Tailwind + DaisyUI CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <style>
+    :root {
+      --bg-primary: #0d1117;
+      --accent: #22c55e;
+      --gradient: linear-gradient(90deg, #22c55e, #06b6d4, #3b82f6);
+    }
+    body { background: var(--bg-primary); color: #c9d1d9; font-family: 'Inter', sans-serif; }
+    .starfield {
+      position: fixed; inset: 0; z-index: -10;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow: hidden;
+    }
+    .star {
+      position: absolute; border-radius: 50%; background: white;
+      animation: twinkle 5s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    .swiper-slide {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      padding: 4rem 2rem;
+      text-align: center;
+      color: #e6edf3;
+      transition: transform .3s ease;
+    }
+    .swiper-slide:hover { transform: scale(1.02); }
+    .gradient-text { background: var(--gradient); -webkit-background-clip: text; color: transparent; }
+    .neon-btn {
+      background: var(--gradient);
+      color: #fff !important;
+      font-weight: bold;
+      border: none;
+      transition: transform .2s;
+    }
+    .neon-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 0 20px rgba(34,197,94,0.6); }
+    .card { transition: transform .25s ease, box-shadow .25s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    footer { border-top: 1px solid rgba(255,255,255,0.1); }
+  </style>
+</head>
+
+<body>
+<!-- animated starfield -->
+<div class="starfield" id="starfield"></div>
+
+<!-- fixed navbar -->
+<nav class="navbar fixed top-0 left-0 right-0 z-50 bg-[#161b22]/60 backdrop-blur-xl border-b border-white/10">
+  <div class="navbar-start">
+    <a class="btn btn-ghost normal-case text-xl font-extrabold gradient-text">Gustyx-Power</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 gap-3 text-sm font-medium">
+      <li><a href="#about" class="hover:text-[--accent]">About</a></li>
+      <li><a href="#experience" class="hover:text-[--accent]">Experience</a></li>
+      <li><a href="#education" class="hover:text-[--accent]">Education</a></li>
+      <li><a href="#skills" class="hover:text-[--accent]">Skills</a></li>
+      <li><a href="#community" class="hover:text-[--accent]">Community</a></li>
+      <li><a href="#contact" class="hover:text-[--accent]">Contact</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a href="https://github.com/Gustyx-Power" target="_blank" class="btn btn-square btn-ghost">
+      <i class="fab fa-github text-xl"></i>
+    </a>
+  </div>
+</nav>
+
+<main class="pt-28 px-4 md:px-8 max-w-6xl mx-auto">
+
+  <!-- hero -->
+  <section id="about" class="min-h-screen flex flex-col justify-center items-center text-center">
+    <img src="https://avatars.githubusercontent.com/u/142430633?v=4" alt="Gusti"
+         class="w-36 h-36 rounded-full ring-4 ring-[--accent] shadow-xl mb-6 animate-pulse">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-2 text-white gradient-text">Gusti Aditya Muzaky</h1>
+    <p class="text-xl md:text-2xl text-gray-400 mb-6">Network Engineer & Mobile Developer</p>
+
+    <!-- auto-slide swiper -->
+    <div class="swiper mySwiper w-full max-w-3xl">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <h2 class="text-3xl font-bold mb-4 gradient-text">About Me</h2>
+          <p>I'm Gusti Aditya Muzaky, a passionate network engineer & Android developer studying Informatics at <strong>Pelita Bangsa University</strong>. I love solving real-world problems through technology and contributing to open-source.</p>
+        </div>
+        <div class="swiper-slide">
+          <h2 class="text-3xl font-bold mb-4 gradient-text">Vision</h2>
+          <p>To become a technology professional who can create meaningful digital solutions and inspire the next generation to innovate fearlessly.</p>
+        </div>
+        <div class="swiper-slide">
+          <h2 class="text-3xl font-bold mb-4 gradient-text">Mission</h2>
+          <ul class="list-disc list-inside text-left space-y-1">
+            <li>Continuously improve technical & soft skills.</li>
+            <li>Contribute to open-source communities.</li>
+            <li>Develop impactful digital solutions for society.</li>
+          </ul>
+        </div>
+        <div class="swiper-slide">
+          <h2 class="text-3xl font-bold mb-4 gradient-text">Motto</h2>
+          <p class="text-2xl italic font-semibold text-[--accent]">“Code with purpose, build with passion.”</p>
+        </div>
+      </div>
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+
+    <div class="flex gap-4 mt-8 flex-wrap justify-center">
+      <a href="https://github.com/Gustyx-Power" target="_blank" class="btn neon-btn gap-2"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/gusti-aditya-muzaky" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </section>
+
+<!-- experience -->
+  <section id="experience" class="py-20">
+    <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Work Experience</h2>
+    <div class="timeline timeline-vertical max-md:timeline-compact">
+      
+      <!-- Xtra Manager -->
+      <div class="timeline-item">
+        <div class="timeline-end">
+          <i class="fas fa-rocket text-[--accent]"></i>
+        </div>
+        <div class="timeline-middle mb-10">
+          <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+            <div class="card-body">
+              <time class="font-mono italic text-sm">Jan 2025 – Present</time>
+              <h3 class="card-title">Xtra Manager Software Community</h3>
+              <p>Founder & Developer</p>
+              <a href="https://xtra-manager-software.github.io/Xtra-Manager-Software-Website/" target="_blank" class="link link-primary text-sm mt-2">Visit Website →</a>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[--accent]/40"/>
+      </div>
+
+      <!-- CV. Inti Media Digital -->
+      <div class="timeline-item">
+        <div class="timeline-end">
+          <i class="fas fa-network-wired text-[--accent]"></i>
+        </div>
+        <div class="timeline-middle mb-10">
+          <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+            <div class="card-body">
+              <time class="font-mono italic text-sm">Dec 2023 – Mar 2025</time>
+              <h3 class="card-title">CV. Inti Media Digital</h3>
+              <p>Leader Technician Network</p>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[--accent]/40"/>
+      </div>
+
+      <!-- PT. Skala Jaringan Indonesia -->
+      <div class="timeline-item">
+        <div class="timeline-end">
+          <i class="fas fa-server text-[--accent]"></i>
+        </div>
+        <div class="timeline-middle mb-10">
+          <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+            <div class="card-body">
+              <time class="font-mono italic text-sm">Jan 2024 – Feb 2025</time>
+              <h3 class="card-title">PT. Skala Jaringan Indonesia</h3>
+              <p>NOC Support & Network Engineering</p>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[--accent]/40"/>
+      </div>
+
+      <!-- PT. Ring Media Nusantara -->
+      <div class="timeline-item">
+        <div class="timeline-middle">
+          <i class="fas fa-tools text-[--accent]"></i>
+        </div>
+        <div class="timeline-center">
+          <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+            <div class="card-body">
+              <time class="font-mono italic text-sm">Mar 2024 – May 2024</time>
+              <h3 class="card-title">PT. Ring Media Nusantara</h3>
+              <p>Admin & Maintenance Network</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <!-- education -->
+  <section id="education" class="py-20">
+    <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Education</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <div class="card-body">
+          <h3 class="card-title">Pelita Bangsa University</h3>
+          <p>Informatics Engineering – 2023 to Present</p>
+        </div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <div class="card-body">
+          <h3 class="card-title">SMK Bina Sarana Informatika</h3>
+          <p>Vocational High School – Computer & Network</p>
+        </div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <div class="card-body">
+          <h3 class="card-title">MTS AL-Mujahidin</h3>
+          <p>Junior High School</p>
+        </div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <div class="card-body">
+          <h3 class="card-title">SD Negeri Kalijaya 03</h3>
+          <p>Elementary School</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- skills & tech -->
+  <section id="skills" class="py-20">
+    <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Skills & Tech Stack</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <figure class="px-10 pt-10"><i class="fab fa-android text-5xl text-[--accent]"></i></figure>
+        <div class="card-body items-center text-center"><h3 class="card-title">Android Development</h3><p>Kotlin, Java, Jetpack Compose, Material 3 & Android Studio mastery.</p></div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <figure class="px-10 pt-10"><i class="fas fa-network-wired text-5xl text-[--accent]"></i></figure>
+        <div class="card-body items-center text-center"><h3 class="card-title">Network Engineering</h3><p>MikroTik, Cisco, NOC support & enterprise network maintenance.</p></div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <figure class="px-10 pt-10"><i class="fas fa-tools text-5xl text-[--accent]"></i></figure>
+        <div class="card-body items-center text-center"><h3 class="card-title">DevOps & Tools</h3><p>Git, GitHub, VS Code, Termux, Linux CLI & CI/CD basics.</p></div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <figure class="px-10 pt-10"><i class="fab fa-python text-5xl text-[--accent]"></i></figure>
+        <div class="card-body items-center text-center"><h3 class="card-title">Programming</h3><p>Python scripting, Shell scripting & cross-platform automation.</p></div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <figure class="px-10 pt-10"><i class="fas fa-file-alt text-5xl text-[--accent]"></i></figure>
+        <div class="card-body items-center text-center"><h3 class="card-title">Productivity</h3><p>Microsoft Office (Word, PowerPoint, Excel) & documentation.</p></div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+        <figure class="px-10 pt-10"><i class="fas fa-shield-alt text-5xl text-[--accent]"></i></figure>
+        <div class="card-body items-center text-center"><h3 class="card-title">Security</h3><p>Device hardening, firewall rules, VPN setup & system auditing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- community -->
+  <section id="community" class="py-20">
+    <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Community</h2>
+    <div class="flex flex-wrap gap-8 justify-center">
+      <div class="card bg-base-200/30 backdrop-blur-md w-72 shadow-xl">
+        <figure class="px-10 pt-10"><img src="https://raw.githubusercontent.com/Gustyx-Power/My-Portofolio/80e9e26e34ddb1ed398985f7781505bf8b8fe0a0/google.png" class="h-20 object-contain"></figure>
+        <div class="card-body items-center text-center"><h3 class="card-title">Google Developer Community</h3><p>Active contributor & learner in GDC events and open-source projects.</p></div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md w-72 shadow-xl">
+        <figure class="px-10 pt-10"><img src="https://raw.githubusercontent.com/Gustyx-Power/My-Portofolio/main/mi.png" class="h-20 object-contain"></figure>
+        <div class="card-body items-center text-center"><h3 class="card-title">Xiaomi Community</h3><p>Member & kernel developer for Xiaomi devices.</p></div>
+      </div>
+      <div class="card bg-base-200/30 backdrop-blur-md w-72 shadow-xl">
+        <figure class="px-10 pt-10"><img src="https://raw.githubusercontent.com/Gustyx-Power/My-Portofolio/main/poco.png" class="h-20 object-contain"></figure>
+        <div class="card-body items-center text-center"><h3 class="card-title">POCO Community</h3><p>Contributor and tester for POCO device kernels & ROMs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" class="py-20">
+    <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Connect With Me</h2>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="https://github.com/Gustyx-Power" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/gusti-aditya-muzaky" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://instagram.com/gustyxpower_" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://facebook.com/gusti.aditya.muzaky" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="https://t.me/GustyxPower" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-telegram"></i> Telegram</a>
+      <a href="https://www.tiktok.com/@gustyxpower" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="https://discord.com/users/610094276214259716" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-discord"></i> Discord</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer footer-center p-6 bg-base-200/20 backdrop-blur-md text-base-content/70 border-t border-[--accent]/20">
+  <p class="text-sm">
+    <span class="gradient-text font-bold">    © 2025 Gusti Aditya Muzaky</span>
+  </p>
+</footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  /* starfield */
+  const sf = document.getElementById('starfield');
+  for (let i = 0; i < 120; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.left = Math.random() * 100 + '%';
+    s.style.top = Math.random() * 100 + '%';
+    s.style.width = s.style.height = Math.random() * 2 + 1 + 'px';
+    s.style.animationDelay = Math.random() * 5 + 's';
+    sf.appendChild(s);
+  }
+
+  /* swiper auto-slide 2.5s */
+  new Swiper('.mySwiper', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: { rotate: 30, stretch: 0, depth: 100, modifier: 1, slideShadows: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    loop: true,
+    autoplay: { delay: 2500, disableOnInteraction: false }
+  });
+</script>
+</body>
+</html>
