@@ -56,6 +56,26 @@
     .card { transition: transform .25s ease, box-shadow .25s ease; }
     .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
     footer { border-top: 1px solid rgba(255,255,255,0.1); }
+
+    /* Additional animations for more liveliness */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .icon-bounce {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    section { opacity: 0; transition: opacity 0.5s; }
+    section.visible { opacity: 1; animation: fadeInUp 1s ease-out; }
+    .card img { transition: transform 0.3s ease; }
+    .card:hover img { transform: scale(1.1); }
   </style>
 </head>
 
@@ -123,7 +143,7 @@
 
     <div class="flex gap-4 mt-8 flex-wrap justify-center">
       <a href="https://github.com/Gustyx-Power" target="_blank" class="btn neon-btn gap-2"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://linkedin.com/in/gusti-aditya-muzaky" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://id.linkedin.com/in/gusti-aditya-muzaky-709a94375&ved=2ahUKEwiX4LSsnZqPAxWDa2wGHQNcOjgQFnoECCoQAQ&usg=AOvVaw0BJ7NTNsdOcE77-Tyhd7lo" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
   </section>
 
@@ -235,35 +255,114 @@
   </section>
 
   <!-- skills & tech -->
-  <section id="skills" class="py-20">
-    <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Skills & Tech Stack</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
-        <figure class="px-10 pt-10"><i class="fab fa-android text-5xl text-[--accent]"></i></figure>
-        <div class="card-body items-center text-center"><h3 class="card-title">Android Development</h3><p>Kotlin, Java, Jetpack Compose, Material 3 & Android Studio mastery.</p></div>
-      </div>
-      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
-        <figure class="px-10 pt-10"><i class="fas fa-network-wired text-5xl text-[--accent]"></i></figure>
-        <div class="card-body items-center text-center"><h3 class="card-title">Network Engineering</h3><p>MikroTik, Cisco, NOC support & enterprise network maintenance.</p></div>
-      </div>
-      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
-        <figure class="px-10 pt-10"><i class="fas fa-tools text-5xl text-[--accent]"></i></figure>
-        <div class="card-body items-center text-center"><h3 class="card-title">DevOps & Tools</h3><p>Git, GitHub, VS Code, Termux, Linux CLI & CI/CD basics.</p></div>
-      </div>
-      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
-        <figure class="px-10 pt-10"><i class="fab fa-python text-5xl text-[--accent]"></i></figure>
-        <div class="card-body items-center text-center"><h3 class="card-title">Programming</h3><p>Python scripting, Shell scripting & cross-platform automation.</p></div>
-      </div>
-      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
-        <figure class="px-10 pt-10"><i class="fas fa-file-alt text-5xl text-[--accent]"></i></figure>
-        <div class="card-body items-center text-center"><h3 class="card-title">Productivity</h3><p>Microsoft Office (Word, PowerPoint, Excel) & documentation.</p></div>
-      </div>
-      <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
-        <figure class="px-10 pt-10"><i class="fas fa-shield-alt text-5xl text-[--accent]"></i></figure>
-        <div class="card-body items-center text-center"><h3 class="card-title">Security</h3><p>Device hardening, firewall rules, VPN setup & system auditing.</p></div>
+<section id="skills" class="py-20">
+  <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Skills & Tech Stack</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Android Development -->
+    <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+      <div class="card-body items-center text-center">
+        <i class="fab fa-android text-5xl text-[--accent] mb-4 icon-bounce"></i>
+        <h3 class="card-title">Android Development</h3>
+        <p class="text-sm text-base-content/70 mb-4">Kotlin, Java, Dart, Jetpack Compose, Material 3, Flutter.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="w-8 h-8" alt="Kotlin"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-8 h-8" alt="Java"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" class="w-8 h-8" alt="Dart"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="w-8 h-8" alt="Flutter"/>
+          <img src="https://i.postimg.cc/VN8PFyVk/jetpack-compose-icon-RGB.png" class="w-8 h-8" alt="Android"/>
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- Network Engineering -->
+    <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+      <div class="card-body items-center text-center">
+        <i class="fas fa-network-wired text-5xl text-[--accent] mb-4 icon-bounce"></i>
+        <h3 class="card-title">Network Engineering</h3>
+        <p class="text-sm text-base-content/70 mb-4">MikroTik, Cisco, NOC support & enterprise network maintenance.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <img src="https://i.postimg.cc/5y1mPgMv/20250821-040927.png" class="w-10 h-10" alt="MikroTik"/>
+          <img src="https://i.postimg.cc/g23fjS2F/1755723637605.png" class="w-11 h-11" alt="Cisco"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+      <div class="card-body items-center text-center">
+        <i class="fas fa-tools text-5xl text-[--accent] mb-4 icon-bounce"></i>
+        <h3 class="card-title">OS, IDE & Tools</h3>
+        <p class="text-sm text-base-content/70 mb-4">Linux Ubuntu & Arch, Windows, GitHub, Android Studio, VS Code, IntelliJ, Termux.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="w-8 h-8" alt="Linux"/>
+          <img src="https://i.postimg.cc/sfS8wH5B/787248.png" class="w-8 h-8" alt="Arch"/>
+          <img src="https://i.postimg.cc/MK7CK3Tk/1755723318231.png" class="w-8 h-8" alt="Ubuntu"/>
+          <img src="https://i.postimg.cc/7LZ8R1wF/1755723385529.png" class="w-8 h-8" alt="Windows"/>
+          <img src="https://i.postimg.cc/zXb7XyX9/github-color.png" class="w-8 h-8" alt="GitHub"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" class="w-8 h-8" alt="Android Studio"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="w-8 h-8" alt="VS Code"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" class="w-8 h-8" alt="IntelliJ"/>
+          <img src="https://camo.githubusercontent.com/3374a0a00a76ed9eb6da21266ee546ea4b72662ecbac53b81b939566ec73dd8e/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f622f62352f5465726d75782e737667" class="w-8 h-8" alt="Termux"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Programming -->
+    <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+      <div class="card-body items-center text-center">
+        <i class="fab fa-python text-5xl text-[--accent] mb-4 icon-bounce"></i>
+        <h3 class="card-title">Programming</h3>
+        <p class="text-sm text-base-content/70 mb-4">Python scripting, Shell scripting & cross-platform automation.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-8 h-8" alt="Python"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" class="w-8 h-8" alt="Bash"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Productivity -->
+    <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+      <div class="card-body items-center text-center">
+        <i class="fas fa-file-alt text-5xl text-[--accent] mb-4 icon-bounce"></i>
+        <h3 class="card-title">Productivity</h3>
+        <p class="text-sm text-base-content/70 mb-4">Microsoft Office (Word, PowerPoint) & documentation.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <img src="https://i.postimg.cc/LsnQfxH8/1755724007220.png" class="w-8 h-8" alt="Word"/>
+          <img src="https://i.postimg.cc/7hTKchC8/microsoft-powerpoint.png" class="w-8 h-8" alt="PowerPoint"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security -->
+    <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+      <div class="card-body items-center text-center">
+        <i class="fas fa-shield-alt text-5xl text-[--accent] mb-4 icon-bounce"></i>
+        <h3 class="card-title">Security</h3>
+        <p class="text-sm text-base-content/70 mb-4">Device hardening, firewall rules, VPN setup & system auditing.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048944.png" class="w-8 h-8" alt="Firewall"/>
+          <img src="https://cdn-icons-png.flaticon.com/512/906/906343.png" class="w-8 h-8" alt="VPN"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Android Root Enthusiast -->
+    <div class="card bg-base-200/30 backdrop-blur-md shadow-xl">
+      <div class="card-body items-center text-center">
+        <i class="fas fa-lock-open text-5xl text-[--accent] mb-4 icon-bounce"></i>
+        <h3 class="card-title">Android Root Enthusiast</h3>
+        <p class="text-sm text-base-content/70 mb-4">I am part of Android rooting. Android Rooting is the process of gaining privileged control (root access) over Android subsystems, enabling deep customization, custom ROMs, kernel modifications, and advanced tweaks using tools like Magisk and KernelSU/KernelSU-Next.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <img src="https://i.postimg.cc/hP7SbR0H/Magisk-Logo.png" class="w-8 h-8" alt="Magisk"/>
+          <img src="https://i.postimg.cc/qMnNB3Wh/images-3.png" class="w-8 h-8" alt="KernelSU"/>
+            <img src="https://i.postimg.cc/8CkcbncM/logo.png" class="w-8 h-8" alt="KernelSU-Next"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- community -->
   <section id="community" class="py-20">
@@ -288,21 +387,56 @@
     </div>
   </section>
 
-  <!-- contact -->
-  <section id="contact" class="py-20">
-    <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Connect With Me</h2>
-    <div class="flex flex-wrap gap-4 justify-center">
-      <a href="https://github.com/Gustyx-Power" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://linkedin.com/in/gusti-aditya-muzaky" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://instagram.com/gustyxpower_" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://facebook.com/gusti.aditya.muzaky" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-facebook"></i> Facebook</a>
-      <a href="https://t.me/GustyxPower" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-telegram"></i> Telegram</a>
-      <a href="https://www.tiktok.com/@gustyxpower" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-tiktok"></i> TikTok</a>
-      <a href="https://discord.com/users/610094276214259716" target="_blank" class="btn btn-outline btn-primary gap-2"><i class="fab fa-discord"></i> Discord</a>
+<!-- contact -->
+<section id="contact" class="py-20">
+  <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Connect With Me</h2>
+  <div class="flex justify-center">
+    <div class="card w-full max-w-md bg-base-200/30 backdrop-blur-md shadow-2xl">
+      <div class="card-body items-center text-center">
+        
+        <!-- Avatar -->
+        <img src="https://avatars.githubusercontent.com/u/142430633?v=4" 
+             alt="Gusti" 
+             class="w-28 h-28 rounded-full ring-4 ring-[--accent] shadow-lg mb-4">
+        
+        <!-- Nama + Role -->
+        <h3 class="text-2xl font-bold text-white">Gusti Aditya Muzaky</h3>
+        <p class="text-sm text-base-content/70 mb-6">
+          Network Engineer & Android Developer <br>
+          <span class="italic">"Building cool stuff, breaking bugs, and shipping fast."</span>
+        </p>
+        
+        <!-- Sosmed Icons -->
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://github.com/Gustyx-Power" target="_blank" class="btn btn-square btn-outline btn-primary hover:scale-110 transition" title="GitHub">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://id.linkedin.com/in/gusti-aditya-muzaky-709a94375" target="_blank" class="btn btn-square btn-outline btn-primary hover:scale-110 transition" title="LinkedIn">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="https://instagram.com/gustyxpower_" target="_blank" class="btn btn-square btn-outline btn-primary hover:scale-110 transition" title="Instagram">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+          <a href="https://www.facebook.com/share/19bNhWSTS2/" target="_blank" class="btn btn-square btn-outline btn-primary hover:scale-110 transition" title="Facebook">
+            <i class="fab fa-facebook text-xl"></i>
+          </a>
+          <a href="https://t.me/GustyxPower" target="_blank" class="btn btn-square btn-outline btn-primary hover:scale-110 transition" title="Telegram">
+            <i class="fab fa-telegram text-xl"></i>
+          </a>
+          <a href="https://www.tiktok.com/@gustyxpower" target="_blank" class="btn btn-square btn-outline btn-primary hover:scale-110 transition" title="TikTok">
+            <i class="fab fa-tiktok text-xl"></i>
+          </a>
+          <a href="https://discord.com/users/610094276214259716" target="_blank" class="btn btn-square btn-outline btn-primary hover:scale-110 transition" title="Discord">
+            <i class="fab fa-discord text-xl"></i>
+          </a>
+          <a href="https://id.quora.com/profile/Gusti-Aditya-Muzaky" target="_blank" class="btn btn-square btn-outline btn-primary hover:scale-110 transition" title="Quora">
+            <i class="fab fa-quora text-xl"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  </section>
-
-</main>
+  </div>
+</section>
 
 <footer class="footer footer-center p-6 bg-base-200/20 backdrop-blur-md text-base-content/70 border-t border-[--accent]/20">
   <p class="text-sm">
@@ -336,6 +470,18 @@
     loop: true,
     autoplay: { delay: 2500, disableOnInteraction: false }
   });
+
+  /* Add visibility class for animations on scroll */
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
 </script>
 </body>
 </html>
